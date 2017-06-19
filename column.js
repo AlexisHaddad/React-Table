@@ -1,8 +1,7 @@
 const React = require("react");
 import PropTypes from "prop-types";
 import {Dropdown, Button} from "react-bootstrap";
-const getUniqueId = require("@app/modules/utility").getUniqueId;
-import DummyComponent from "@app/components/generic/common/dummy-component";
+import DummyComponent from "./dummy-component";
 
 const Column = React.createClass({
     displayName: "Column",
@@ -72,7 +71,7 @@ const Column = React.createClass({
             <th key={this.props.columnKey} ref="target" className="column-header">
                 <Dropdown
                     className="column-button"
-                    id={getUniqueId(this.props.columnKey)}
+                    id={this.props.columnKey}
                     open={this.state.visible}
                     onToggle={this.toggleFilter}
                 >
