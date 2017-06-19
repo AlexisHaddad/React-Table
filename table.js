@@ -5,10 +5,22 @@ const _ = require("underscore");
 const numbro = require("numbro");
 const counterpart = require("counterpart");
 
-const getDeepValue = require("@app/modules/utility").getDeepValue;
+const getDeepValue = (item, key) => {
+    if (item) {
+        if (key === "_root") {
+            return item;
+        }
+        const temp = key.split(".");
+        if (temp.length === 1) {
+            return item[temp[0]];
+        }
+        return getDeepValue(item[temp.shift()], temp.join("."));
+    }
+    return null;
+};
 
 import {Pagination} from "react-bootstrap";
-import Checkbox from "@app/components/generic/common/checkbox";
+import Checkbox from "./checkbox";
 
 const Table = React.createClass({
     displayName: "Table",
