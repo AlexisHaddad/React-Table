@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import {Dropdown, Button} from "react-bootstrap";
 import DummyComponent from "./dummy-component";
 
+// test noor 2
+
 const Column = React.createClass({
     displayName: "Column",
 
