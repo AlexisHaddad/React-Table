@@ -1,2 +1,2 @@
 # React-Table
-Table React Component with a lot of features
+PoC for Table React Component with filter and sort features
